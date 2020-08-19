@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+
+<script>
+
+    function isPrime(number){
+        if(number<2) return false;
+        if(number === 2) return true;
+        for (let i = 2; i < number-1; i++) {
+            if(number%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function listPrime(num, startNum){
+        let count = 0;
+        let N = startNum;
+        while (count < num){
+            if(isPrime(N)){
+                document.write(N+',');
+                count++;
+            }
+            N++;
+        }
+    }
+
+    let num = +prompt("Nhap vao so luong so nguyen to muon hien thi");
+    let start = +prompt("Nhap vao so ma ban muon bat dau");
+    listPrime(num,start);
+
+</script>
+</body>
+</html>
+<!--
+    B1: Check được 1 số là số nguyên tố
+    B2: Hiển thị danh sách các số nguyên tố
+    B3: Lam giao dien.
+-->
